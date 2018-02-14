@@ -3,11 +3,13 @@ require 'yelp/responses/models/review'
 
 module Yelp
   module Response
-    class Review < Base
+    class ReviewSearch < Base
       attr_reader :reviews
 
       def initialize(json)
-        @reviews = parse(json, Model::Review)
+        super (json)
+
+        @reviews = parse(@reviews, Model::Review)
       end
     end
   end

@@ -1,11 +1,11 @@
 require 'erb'
 require 'json'
 
-require 'yelp/responses/review'
+require 'yelp/responses/review_search'
 
 module Yelp
   module Endpoint
-    class Review
+    class ReviewSearch
       PATH = '/v3/businesses/' ## NOTE reviews added in review_request
 
       def initialize(client)
@@ -23,7 +23,7 @@ module Yelp
       #   business.name # => 'Yelp'
       #   buinesss.url  # => 'http://www.yelp.com/biz/yelp-san-francisco'
       def reviews(id, locale = {})
-        Response::Review.new(JSON.parse(review_request(id, locale).body))
+        Response::ReviewSearch.new(JSON.parse(review_request(id, locale).body))
       end
 
       private
