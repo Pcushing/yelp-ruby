@@ -6,7 +6,7 @@ require 'yelp/error'
 require 'yelp/endpoint/business'
 require 'yelp/endpoint/phone_search'
 require 'yelp/endpoint/search'
-require 'yelp/endpoint/review'
+require 'yelp/endpoint/review_search'
 
 module Yelp
   class Client
@@ -14,7 +14,7 @@ module Yelp
     REQUEST_CLASSES = [ Yelp::Endpoint::Search,
                         Yelp::Endpoint::Business,
                         Yelp::Endpoint::PhoneSearch,
-                        Yelp::Endpoint::Review
+                        Yelp::Endpoint::ReviewSearch
                       ]
 
     attr_reader :configuration
